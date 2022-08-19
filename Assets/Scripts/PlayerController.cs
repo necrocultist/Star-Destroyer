@@ -13,11 +13,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
-        float velocityX = inputX * moveSpeed;
-        transform.Translate(Vector2.right * velocityX * Time.deltaTime);
-        
         float inputY = Input.GetAxisRaw("Vertical");
-        float velocityY = inputY * moveSpeed;
-        transform.Translate(Vector2.up * velocityY * Time.deltaTime);
+        Vector2 velocity = new Vector2(inputX, inputY);
+        transform.Translate(velocity.normalized * moveSpeed * Time.deltaTime);
     }
 }
