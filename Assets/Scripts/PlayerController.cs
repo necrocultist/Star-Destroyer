@@ -1,12 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField] private float moveSpeed;
 
     void FixedUpdate()
@@ -16,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     Vector2 GetPlayerInput()
     {
-        return new Vector2(UnityEngine.Input.GetAxisRaw("Horizontal"), UnityEngine.Input.GetAxisRaw("Vertical"));
+        return new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
     }
 
     void MovePlayer(Vector2 playerVelocity)
