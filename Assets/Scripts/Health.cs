@@ -5,19 +5,28 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] float maxHealth = 10;
-    [SerializeField] public float currentHealth;
+    [SerializeField] private int maxHealth;
+    public int currentHealth;
     public bool isAlive;
 
     void OnEnable()
     {
-        currentHealth = maxHealth;
+        ResetHealth();
         isAlive = true;
     }
 
-    void TakeDamage(float damage)
+    public void DecraseHealth(int damage)
     {
         currentHealth -= damage;
     }
-    
+
+    public void IncreaseHealth(int refill)
+    {
+        currentHealth += refill;
+    }
+
+    private void ResetHealth()
+    {
+        currentHealth = maxHealth;
+    }
 }

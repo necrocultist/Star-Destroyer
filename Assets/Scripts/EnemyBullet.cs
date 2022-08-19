@@ -6,23 +6,30 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public Health healthscr;
-    [SerializeField] private float damage;
+    [SerializeField] private int enemyBulletDamage;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        GameObject gameObject = other.gameObject;
+        if (gameObject != null)
         {
-            healthscr.TakeDamage(damage);
-            if (healthscr.currentHealth <= 0)
+            if (gameObject.TryGetComponent(out Health playerHealth))
             {
-                healthscr.isAlive = false;
-                
+                playerHealth.DecraseHealth(enemyBulletDamage);
+                if (playerHealth.currentHealth <= 0)
+                {
+                    playerHealth.isAlive = false;
+                }
             }
+        }
+        else
+        {
+            Debug.Log("There is no gameObject this" + name + "collides.");
         }
     }
 
     void Update()
     {
-        
+
     }
 }
