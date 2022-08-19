@@ -18,14 +18,9 @@ public class EnemySpawner : MonoBehaviour
     {
         screenHalfSizeWorldUnits =
             new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
-    }
-
-    private void Update()
-    {
         StartCoroutine(SpawnEnemy());
-        first = false;//to prevent Update from running Spawn function multiple times
-
     }
+    
 
     public IEnumerator SpawnEnemy()
     {
