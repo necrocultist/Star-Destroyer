@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float BackgroundSpeed;
 
-    // Update is called once per frame
     void Update()
     {
         
