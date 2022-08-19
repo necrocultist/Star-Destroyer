@@ -6,7 +6,12 @@ using UnityEngine.Windows;
 
 public class PlayerController : MonoBehaviour
 {
+<<<<<<< Updated upstream
     [SerializeField] private float moveSpeed;
+=======
+    public float moveSpeed = 7;
+    
+>>>>>>> Stashed changes
     
     void Update()
     {
