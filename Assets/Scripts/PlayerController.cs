@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float moveSpeed = 7;
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        float inputX = Input.GetAxisRaw("Horizontal");
+        float velocityX = inputX * moveSpeed;
+        transform.Translate(Vector2.right * velocityX * Time.deltaTime);
         
+        float inputY = Input.GetAxisRaw("Vertical");
+        float velocityY = inputY * moveSpeed;
+        transform.Translate(Vector2.up * velocityY * Time.deltaTime);
     }
 }
