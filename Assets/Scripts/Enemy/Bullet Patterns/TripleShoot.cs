@@ -2,7 +2,7 @@ using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class LinearShoot : MonoBehaviour
+public class TripleShoot : MonoBehaviour
 {
     [SerializeField] private GameObject[] bullets;
     [SerializeField] private GameObject bulletPrefab;
