@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 684cb930b68c7b94a8400d85f106d108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -126,3 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBulletSpeed: 4
   playerBulletDamage: 50
+  bulletDestroyEffect: {fileID: 8112302006766880307, guid: f9c383f4c0499f146a8b8e89cda22fba, type: 3}
+  destroyTime: 0.1
