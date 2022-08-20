@@ -8,7 +8,6 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject spawnPoint;
-    public GameObject[] enemies;
     public float enemySpawnDuration;
     public Health playerHealth;
     bool first = true;
@@ -26,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (playerHealth.isAlive)
         {
-            GameObject clone = (GameObject)Instantiate(enemyPrefab,
+            Instantiate(enemyPrefab,
                     new Vector3(Random.Range(-screenHalfSizeWorldUnits.x, screenHalfSizeWorldUnits.x),
                         (spawnPoint.transform.position.y)), Quaternion.identity);
 
