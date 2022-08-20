@@ -27,11 +27,7 @@ public class EnemySpawner : MonoBehaviour
                         (transform.position.y)), Quaternion.identity);
             KillEnemy();
             yield return new WaitForSeconds(enemySpawnDuration);
-           
-
         }
-        
-        
     }
 
     public IEnumerator KillEnemy()

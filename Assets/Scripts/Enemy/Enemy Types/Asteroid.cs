@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform[] spawnPoints;
+    private int randomSpawnPoint;
+    [SerializeField] private float asteroidSpawnTime;
+    [SerializeField] private GameObject asteroid;
     void Start()
     {
-        
+        StartCoroutine(SpawnAsteroid());
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator SpawnAsteroid()
     {
+        yield return new WaitForSeconds(asteroidSpawnTime);
+        randomSpawnPoint = Random.Range(0, spawnPoints.Length);
+        if (spawnPoints[randomSpawnPoint].position.x > 0)
+        {
+            Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, 135)));
+        }
+        else if(spawnPoints[randomSpawnPoint].position.x < 0)
+        {
+            Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, -135)));
+        }
         
-    }
+}
+
 }
