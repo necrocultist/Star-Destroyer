@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
         if (!AliveCheck())
         {
             Destroy(gameObject);
+            DestroyObject();
         }
     }
 
@@ -32,6 +33,10 @@ public class Health : MonoBehaviour
         return currentHealth > 0;
     }
 
+    private void DestroyObject()
+    {
+
+    }
 
     private void ResetHealth()
     {

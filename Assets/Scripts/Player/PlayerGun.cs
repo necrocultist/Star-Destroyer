@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerGun : MonoBehaviour
 {
-    [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private GameObject playerBullet;
 
     void Update()
@@ -14,9 +13,9 @@ public class PlayerGun : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (bulletSpawnPoint != null && playerBullet != null)
+            if (playerBullet != null)
             {
-                Instantiate(playerBullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                Instantiate(playerBullet, transform.position, transform.rotation);
             }
             else
             {

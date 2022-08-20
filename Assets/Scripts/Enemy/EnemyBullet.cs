@@ -10,17 +10,17 @@ public class EnemyBullet : MonoBehaviour
         transform.Translate(new Vector2(0, bulletSpeed * Time.fixedDeltaTime));
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         GameObject gameObject = other.gameObject;
         if (gameObject != null)
         {
-            if (gameObject.TryGetComponent(out Health playerHealth))
+            if (gameObject.TryGetComponent(out Health player) && gameObject.GetComponent<PlayerController>() != null)
             {
-                playerHealth.DecraseHealth(enemyBulletDamage);
-                if (playerHealth.currentHealth <= 0)
+                player.DecraseHealth(enemyBulletDamage);
+                if (player.currentHealth <= 0)
                 {
-                    playerHealth.isAlive = false;
+                    player.isAlive = false;
                 }
             }
         }
