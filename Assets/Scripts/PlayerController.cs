@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer(Vector2 playerVelocity)
     {
-        transform.Translate(moveSpeed * Time.deltaTime * playerVelocity.normalized);
+        transform.Translate(moveSpeed * Time.fixedDeltaTime * playerVelocity.normalized);
     }
 
 }

@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
             new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
         StartCoroutine(SpawnEnemy());
     }
-    
+
 
     public IEnumerator SpawnEnemy()
     {
@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
             GameObject clone = (GameObject)Instantiate(enemyPrefab,
                     new Vector3(Random.Range(-screenHalfSizeWorldUnits.x, screenHalfSizeWorldUnits.x),
                         (spawnPoint.transform.position.y)), Quaternion.identity);
-            
+
             yield return new WaitForSeconds(enemySpawnDuration);
         }
     }
