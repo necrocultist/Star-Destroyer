@@ -11,7 +11,7 @@ public class EnemyRightLeft : MonoBehaviour
     private void FixedUpdate()
     {
         MoveEnemyRightLeft();
-        if ((transform.position.y - player.position.y) > toPlayerOffset)
+        if ((transform.position.y - player.position.y) > toPlayerOffset && player != null)
         {
             MoveEnemyDown();
         }
