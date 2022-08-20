@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 0;
         currentState = States.TapToStart;
-  
     }
 
     void Update()
@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
                 startPanel.SetActive(true);
                 endPanel.SetActive(false);
                 break;
+            case States.Fail:
+                Time.timeScale = 0;
+                endPanel.SetActive(true);
+                break;
         }
     }
 
@@ -39,5 +43,11 @@ public class GameManager : MonoBehaviour
     {
         startPanel.SetActive(false);
         currentState = States.Playing;
+        Time.timeScale = 1;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }
