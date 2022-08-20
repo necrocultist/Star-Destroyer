@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStraight : MonoBehaviour
@@ -9,10 +6,10 @@ public class EnemyStraight : MonoBehaviour
 
     void FixedUpdate()
     {
-        MoveEnemy();
+        MoveEnemyStraight();
     }
 
-    private void MoveEnemy()
+    private void MoveEnemyStraight()
     {
         transform.Translate(new Vector2(0, enemySpeed * Time.fixedDeltaTime));
     }

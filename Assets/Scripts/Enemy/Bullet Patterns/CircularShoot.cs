@@ -5,8 +5,8 @@ using UnityEngine;
 public class CircularShoot : MonoBehaviour
 {
     private GameObject[] bullets;
-    public GameObject bulletPrefab;
-   private int x = 0;
+    [SerializeField] private GameObject bulletPrefab;
+    private int x = 0;
     void Start()
     {
         StartCoroutine(SpawnCircular());

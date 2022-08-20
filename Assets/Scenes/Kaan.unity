@@ -164,10 +164,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 165649224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d90169d10083045b763a58bea1444c, type: 3}
+  m_Script: {fileID: 11500000, guid: 234db28be81681246a00f12f19032d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 779177889240866409, guid: 796b0367067c37d4eafc154e250a05ed, type: 3}
+  bullet: {fileID: 0}
+  spawnPoint: {fileID: 165649225}
+  enemy: {fileID: 0}
+  bulletSpawnDuration: 0
 --- !u!1 &258520172
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +267,8 @@ GameObject:
   - component: {fileID: 437222251}
   - component: {fileID: 437222256}
   - component: {fileID: 437222255}
+  - component: {fileID: 437222258}
+  - component: {fileID: 437222257}
   m_Layer: 0
   m_Name: Enemy Ship
   m_TagString: Untagged
@@ -378,6 +383,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 4
+--- !u!114 &437222257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437222250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac65bbaa3a533a4d84d34314294b96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 80
+  isAlive: 0
+--- !u!50 &437222258
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437222250}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &438838322
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,9 +597,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1352104278}
   - component: {fileID: 1352104277}
-  - component: {fileID: 1352104276}
-  - component: {fileID: 1352104279}
   - component: {fileID: 1352104280}
+  - component: {fileID: 1352104282}
+  - component: {fileID: 1352104281}
   m_Layer: 0
   m_Name: Player Ship
   m_TagString: Untagged
@@ -566,19 +607,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1352104276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352104275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e639085879f9e41a19c5bf4c14e3bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
 --- !u!212 &1352104277
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -648,21 +676,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1352104279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352104275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a906334278eb70e41bdb25ee2f026bbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 80
-  isAlive: 0
 --- !u!61 &1352104280
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -689,6 +702,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.99, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &1352104281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352104275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac65bbaa3a533a4d84d34314294b96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 10
+  isAlive: 0
+--- !u!114 &1352104282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352104275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65cf4c30787a2a74284dadd2d2a5ed71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &1565688968
 GameObject:
   m_ObjectHideFlags: 0

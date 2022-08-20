@@ -6,8 +6,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
+    [HideInInspector]public bool isAlive;
     public int currentHealth;
-    public bool isAlive;
 
     void OnEnable()
     {

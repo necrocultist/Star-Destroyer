@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
@@ -32,10 +28,5 @@ public class EnemyBullet : MonoBehaviour
         {
             Debug.Log("There is no gameObject this" + name + "collides.");
         }
-    }
-
-    void Update()
-    {
-
     }
 }

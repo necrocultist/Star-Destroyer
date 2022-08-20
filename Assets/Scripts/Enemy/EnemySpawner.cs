@@ -1,15 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public GameObject spawnPoint;
-    public float enemySpawnDuration;
-    public Health playerHealth;
+    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private float enemySpawnDuration;
+    [SerializeField] private Health playerHealth;
     private Vector2 screenHalfSizeWorldUnits;
 
     private void Start()
@@ -24,9 +20,9 @@ public class EnemySpawner : MonoBehaviour
     {
         while (playerHealth.isAlive)
         {
-            Instantiate(enemyPrefab,
+            GameObject clone = (GameObject)Instantiate(enemyPrefab,
                     new Vector3(Random.Range(-screenHalfSizeWorldUnits.x, screenHalfSizeWorldUnits.x),
-                        (spawnPoint.transform.position.y)), Quaternion.identity);
+                        (transform.position.y)), Quaternion.identity);
 
             yield return new WaitForSeconds(enemySpawnDuration);
         }
