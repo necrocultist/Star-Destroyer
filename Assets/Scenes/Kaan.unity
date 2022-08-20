@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 165649225}
   - component: {fileID: 165649226}
+  - component: {fileID: 165649227}
   m_Layer: 0
   m_Name: EnemyBulletSpawnPoint
   m_TagString: Untagged
@@ -148,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165649224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.05, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -162,15 +163,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165649224}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 234db28be81681246a00f12f19032d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
   spawnPoint: {fileID: 165649225}
-  enemy: {fileID: 0}
   bulletSpawnDuration: 0
+--- !u!114 &165649227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165649224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d90169d10083045b763a58bea1444c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 779177889240866409, guid: 796b0367067c37d4eafc154e250a05ed, type: 3}
 --- !u!1 &258520172
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,9 +278,9 @@ GameObject:
   m_Component:
   - component: {fileID: 437222252}
   - component: {fileID: 437222251}
-  - component: {fileID: 437222256}
   - component: {fileID: 437222255}
   - component: {fileID: 437222258}
+  - component: {fileID: 437222256}
   - component: {fileID: 437222257}
   m_Layer: 0
   m_Name: Enemy Ship
@@ -396,8 +409,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 80
   isAlive: 0
+  currentHealth: 80
 --- !u!50 &437222258
 Rigidbody2D:
   serializedVersion: 4
@@ -715,8 +728,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 10
   isAlive: 0
+  currentHealth: 10
 --- !u!114 &1352104282
 MonoBehaviour:
   m_ObjectHideFlags: 0
