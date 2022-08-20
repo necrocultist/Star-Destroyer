@@ -10,7 +10,7 @@ public class EnemyShoot : MonoBehaviour
     public Transform spawnPoint;
     private bool shoot;
     public GameObject enemy;
-    private float bulletSpawnDuration;
+    public float bulletSpawnDuration;
     private void OnEnable()
     {
         shoot = true;
