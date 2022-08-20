@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
             case States.Fail:
                 startPanel.SetActive(false);
                 finishPanel.SetActive(true);
+                break;
         }
     }
 }
