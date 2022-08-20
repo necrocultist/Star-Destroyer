@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    public int currentHealth;
+    private int currentHealth;
 
     private Vector3 scaleChange = new Vector3(0.2f, 0.2f, 0f);
     public GameManager gm;
