@@ -170,6 +170,7 @@ MonoBehaviour:
   bullet: {fileID: 1106901738}
   spawnPoint: {fileID: 991459589}
   enemy: {fileID: 991459586}
+  bulletSpawnDuration: 0.1
 --- !u!1 &564001854
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da04d0f291b0fd4c86b08a81663d651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: -7
+  enemySpeed: -1
 --- !u!4 &991459589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1278630247939692531, guid: 00d442985f3abbf4b8d423823b4718e7, type: 3}
@@ -282,6 +283,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7911108021289050579, guid: 059674979a7f6034da755de53d28333a, type: 3}
   m_PrefabInstance: {fileID: 1872995464680224778}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1106901741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106901738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe2e82e5de211146b80e635ce5c45fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBulletDamage: 1
+  bulletSpeed: -3
 --- !u!1 &1156485588
 GameObject:
   m_ObjectHideFlags: 0

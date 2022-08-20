@@ -7,6 +7,12 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private int enemyBulletDamage;
+    [SerializeField] private float bulletSpeed;
+
+    void FixedUpdate()
+    {
+        transform.Translate(new Vector2(0, bulletSpeed * Time.fixedDeltaTime));
+    }
 
     private void OnTriggerEnter(Collider other)
     {
