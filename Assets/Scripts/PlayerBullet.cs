@@ -12,15 +12,13 @@ public class PlayerBullet : MonoBehaviour
         PlayerBulletMove();
     }
 
-    void PlayerBulletMove()
+    private void PlayerBulletMove()
     {
         transform.Translate(new Vector2(0, playerBulletSpeed * Time.fixedDeltaTime));
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         GameObject gameObject = other.gameObject;
-        Debug.Log("11");
         if (gameObject != null)
         {
             if (gameObject.TryGetComponent(out Health enemy))

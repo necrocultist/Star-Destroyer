@@ -11,7 +11,6 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] enemies;
     public float enemySpawnDuration;
     public Health playerHealth;
-    bool first = true;
     private Vector2 screenHalfSizeWorldUnits;
 
     private void Start()

@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBulletSpeed: 7
-  playerBulletDamage: 0
+  playerBulletDamage: 10

@@ -18,12 +18,23 @@ public class Health : MonoBehaviour
     public void DecraseHealth(int damage)
     {
         currentHealth -= damage;
+
+        if (!AliveCheck())
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void IncreaseHealth(int refill)
     {
         currentHealth += refill;
     }
+
+    private bool AliveCheck()
+    {
+        return currentHealth > 0;
+    }
+
 
     private void ResetHealth()
     {
