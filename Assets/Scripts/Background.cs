@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-    [SerializeField] private float BackgroundSpeed;
+    [SerializeField] private float backgroundSpeed;
 
     void Update()
     {
