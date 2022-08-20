@@ -6,29 +6,23 @@ public class CircularShoot : MonoBehaviour
 {
     private GameObject[] bullets;
     public GameObject bulletPrefab;
-    private int x = 0;
+   // private int x = 0;
     void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         StartCoroutine(SpawnCircular());
     }
 
     public IEnumerator SpawnCircular()
     {
-        bullets = new GameObject[8];
-
         while (true)
         {
+            bullets = new GameObject[8];
+
             for (int i = 0; i < bullets.Length; i++)
             {
-                Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, x)));
-                x += 45;
+                Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             }
+            yield return new WaitForSeconds(3);
         }
     }
 }

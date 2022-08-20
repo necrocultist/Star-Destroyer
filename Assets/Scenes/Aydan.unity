@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b2482c96b4d744baca17a09c71b86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 3
+  enemySpeed: -3
 --- !u!114 &346918582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d90169d10083045b763a58bea1444c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullets: []
   bulletPrefab: {fileID: 2383598947674962524}
 --- !u!1 &564001854
 GameObject:
@@ -393,15 +392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a13ad8015bdbca4cb1ec4627e5237df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
-  spawnPoint: {fileID: 1156485588}
-  enemies:
-  - {fileID: 0}
-  place: 0
-  enemySpawnDuration: 2
-  playerHealth: {fileID: 0}
-  first: 1
-  screenHalfSizeWorldUnits: {x: 0, y: 0}
 --- !u!114 &1156485591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,17 +649,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5358291336676693636, guid: 16fe0270a8410794b9761c0384ccd3d0, type: 3}
   m_PrefabInstance: {fileID: 2383598947674962523}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2383598947674962525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383598947674962524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01fc2c1126a061b4fab198cd4319d2c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyBulletDamage: 0
-  bulletSpeed: 4
