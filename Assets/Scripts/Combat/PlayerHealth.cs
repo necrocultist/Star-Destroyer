@@ -3,13 +3,12 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    [HideInInspector]public bool isAlive;
     public int currentHealth;
+    private Vector3 scaleChange = new Vector3(0.2f, 0.2f, 0f);
 
     private void OnEnable()
     {
         ResetHealth();
-        isAlive = true;
     }
 
     public void DecraseHealth(int damage)
@@ -18,9 +17,11 @@ public class PlayerHealth : MonoBehaviour
 
         if (!AliveCheck())
         {
-            Destroy(gameObject);
             DestroyObject();
         }
+
+        transform.localScale += scaleChange;
+        
     }
 
     public void IncreaseHealth(int refill)
@@ -28,14 +29,14 @@ public class PlayerHealth : MonoBehaviour
         currentHealth += refill;
     }
 
-    private bool AliveCheck()
+    public bool AliveCheck()
     {
         return currentHealth > 0;
     }
 
     private void DestroyObject()
     {
-
+        Destroy(gameObject);
     }
 
     private void ResetHealth()

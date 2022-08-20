@@ -6,7 +6,6 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField] private float bulletSpeed;
     [SerializeField] private GameObject bulletDestroyEffect;
     [SerializeField] private float destroyTime;
-    Vector3 scaleChange = new Vector3(0.15f, 0.15f, 0f);
 
     void FixedUpdate()
     {
@@ -23,14 +22,6 @@ public class EnemyBullet : MonoBehaviour
             if (gameObject.TryGetComponent(out PlayerHealth player))
             {
                 player.DecraseHealth(enemyBulletDamage);
-                if (player.currentHealth <= 0)
-                {
-                    player.isAlive = false;
-                }
-                else if (player.currentHealth > 0)
-                {
-                    player.transform.localScale += scaleChange;
-                }
 
                 DestroyEnemyBullet(contactPoint);
                 DestroyBullet();

@@ -29,11 +29,7 @@ public class PlayerBullet : MonoBehaviour
             if (gameObject.TryGetComponent(out EnemyHealth enemy))
             {
                 enemy.DecraseHealth(playerBulletDamage);
-                if (enemy.currentHealth <= 0)
-                {
-                    enemy.isAlive = false;
-                }
-
+               
                 DestroyPlayerBullet(contactPoint);
                 DestroyBullet();
             }

@@ -3,13 +3,11 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    [HideInInspector]public bool isAlive;
-    public int currentHealth;
+    private int currentHealth;
 
     private void OnEnable()
     {
         ResetHealth();
-        isAlive = true;
     }
 
     public void DecraseHealth(int damage)
@@ -28,7 +26,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth += refill;
     }
 
-    private bool AliveCheck()
+    public bool AliveCheck()
     {
         return currentHealth > 0;
     }

@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     public IEnumerator SpawnEnemy()
     {
-        while (playerHealth.isAlive)
+        while (playerHealth.AliveCheck())
         {
             GameObject clone = (GameObject)Instantiate(enemyPrefab,
                     new Vector3(Random.Range(-screenHalfSizeWorldUnits.x, screenHalfSizeWorldUnits.x),
