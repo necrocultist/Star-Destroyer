@@ -10,7 +10,6 @@ public class EnemySpawner : MonoBehaviour
     public GameObject spawnPoint;
     public float enemySpawnDuration;
     public Health playerHealth;
-    bool first = true;
     private Vector2 screenHalfSizeWorldUnits;
 
     private void Start()
