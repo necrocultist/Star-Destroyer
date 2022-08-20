@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject spawnPoint;
     public GameObject[] enemies;
-    public float place, enemySpawnDuration;
+    public float enemySpawnDuration;
     public Health playerHealth;
     bool first = true;
     private Vector2 screenHalfSizeWorldUnits;
