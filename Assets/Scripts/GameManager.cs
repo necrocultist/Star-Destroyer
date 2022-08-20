@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentState = States.TapToStart;
-  
     }
 
     void Update()
@@ -32,6 +31,9 @@ public class GameManager : MonoBehaviour
                 startPanel.SetActive(true);
                 endPanel.SetActive(false);
                 break;
+            case States.Fail:
+                endPanel.SetActive(true);
+                break;
         }
     }
 
@@ -39,5 +41,10 @@ public class GameManager : MonoBehaviour
     {
         startPanel.SetActive(false);
         currentState = States.Playing;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }

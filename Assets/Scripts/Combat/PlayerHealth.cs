@@ -5,6 +5,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int maxHealth;
     [HideInInspector]public bool isAlive;
     public int currentHealth;
+    public GameManager gm;
 
     private void OnEnable()
     {
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Destroy(gameObject);
             DestroyObject();
+            gm.currentState = States.Fail;
         }
     }
 
