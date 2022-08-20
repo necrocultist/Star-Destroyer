@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - Enemy Bullet
+  - Player Bullet
   - 
   - 
   - 
