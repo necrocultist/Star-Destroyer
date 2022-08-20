@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
 
     private Vector3 scaleChange = new Vector3(0.2f, 0.2f, 0f);
     [SerializeField] private GameManager gm;
+    public GameObject[] healths;
+    private int index = 0;
 
 
     private void OnEnable()
@@ -18,13 +20,18 @@ public class PlayerHealth : MonoBehaviour
     public void DecraseHealth(int damage)
     {
         currentHealth -= damage;
-
+        
         if (!AliveCheck())
         {
             DestroyObject();
             gm.currentState = States.Fail;
         }
 
+        else
+        {
+            Destroy(healths[index]);
+            index++;
+        }
         transform.localScale += scaleChange;
 
     }

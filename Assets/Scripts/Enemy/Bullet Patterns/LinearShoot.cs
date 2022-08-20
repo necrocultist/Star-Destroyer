@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class LinearShoot : MonoBehaviour
 {
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private GameObject[] bullets;
+    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletSpawnDuration;
     private bool isShootAvailable;
+    
 
     private void OnEnable()
     {
@@ -19,8 +20,14 @@ public class LinearShoot : MonoBehaviour
     {
         while (isShootAvailable)
         {
-            Instantiate(bullet, transform.position, quaternion.identity);
-            
+            int x = -30;
+            bullets = new GameObject[3];
+
+            for (int i = 0; i < bullets.Length; i++)
+            {
+                Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, x)));
+                x += 30;
+            }
             yield return new WaitForSeconds(bulletSpawnDuration);
         }
     }
