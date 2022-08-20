@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     [HideInInspector]public bool isAlive;
     public int currentHealth;
 
-    void OnEnable()
+    private void OnEnable()
     {
         ResetHealth();
         isAlive = true;
