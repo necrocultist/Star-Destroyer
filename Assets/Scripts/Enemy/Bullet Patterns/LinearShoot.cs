@@ -20,13 +20,13 @@ public class LinearShoot : MonoBehaviour
     {
         while (isShootAvailable)
         {
-            int x = -30;
+            int x = -15;
             bullets = new GameObject[3];
 
             for (int i = 0; i < bullets.Length; i++)
             {
                 Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, x)));
-                x += 30;
+                x += 15;
             }
             yield return new WaitForSeconds(bulletSpawnDuration);
         }
