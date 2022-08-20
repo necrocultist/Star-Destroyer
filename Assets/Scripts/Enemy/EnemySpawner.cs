@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private float enemySpawnDuration;
-    [SerializeField] private Health playerHealth;
+    [SerializeField] private PlayerHealth playerHealth;
     private Vector2 screenHalfSizeWorldUnits;
 
     private void Start()

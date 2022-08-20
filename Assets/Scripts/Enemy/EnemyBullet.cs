@@ -20,7 +20,7 @@ public class EnemyBullet : MonoBehaviour
 
         if (gameObject != null)
         {
-            if (gameObject.TryGetComponent(out Health player) && gameObject.GetComponent<PlayerController>() != null)
+            if (gameObject.TryGetComponent(out PlayerHealth player))
             {
                 player.DecraseHealth(enemyBulletDamage);
                 if (player.currentHealth <= 0)
