@@ -5,7 +5,9 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private float enemySpawnDuration;
+    [SerializeField] private float enemyDieDuration;
     [SerializeField] private PlayerHealth playerHealth;
+    private GameObject clone = null;
     private Vector2 screenHalfSizeWorldUnits;
 
     private void Start()
@@ -20,11 +22,24 @@ public class EnemySpawner : MonoBehaviour
     {
         while (playerHealth.AliveCheck())
         {
-            GameObject clone = (GameObject)Instantiate(enemyPrefab,
+            clone = Instantiate(enemyPrefab,
                     new Vector3(Random.Range(-screenHalfSizeWorldUnits.x, screenHalfSizeWorldUnits.x),
                         (transform.position.y)), Quaternion.identity);
-
+            KillEnemy();
             yield return new WaitForSeconds(enemySpawnDuration);
+           
+
+        }
+        
+        
+    }
+
+    public IEnumerator KillEnemy()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(enemyDieDuration);
+            Destroy(clone);
         }
     }
 }
