@@ -16,7 +16,6 @@ public class EnemyHealth : MonoBehaviour
 
         if (!AliveCheck())
         {
-            Destroy(gameObject);
             DestroyObject();
         }
     }
@@ -31,9 +30,9 @@ public class EnemyHealth : MonoBehaviour
         return currentHealth > 0;
     }
 
-    private void DestroyObject()
+    public void DestroyObject()
     {
-
+        Destroy(gameObject);
     }
 
     private void ResetHealth()

@@ -19,7 +19,7 @@ public class EnemyBullet : MonoBehaviour
 
         if (gameObject != null)
         {
-            if (gameObject.TryGetComponent(out PlayerHealth player))
+            if (gameObject.TryGetComponent(out PlayerHealth player) || gameObject.TryGetComponent(out PlayerGun _))
             {
                 player.DecraseHealth(enemyBulletDamage);
 

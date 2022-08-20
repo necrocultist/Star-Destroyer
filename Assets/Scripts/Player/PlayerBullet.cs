@@ -26,7 +26,7 @@ public class PlayerBullet : MonoBehaviour
 
         if (gameObject != null)
         {
-            if (gameObject.TryGetComponent(out EnemyHealth enemy))
+            if (gameObject.TryGetComponent(out EnemyHealth enemy) || gameObject.TryGetComponent(out EnemySpawner _))
             {
                 enemy.DecraseHealth(playerBulletDamage);
                
