@@ -266,7 +266,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &437222250
 GameObject:
@@ -355,7 +355,7 @@ Transform:
   m_Children:
   - {fileID: 165649225}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!61 &437222255
 BoxCollider2D:
@@ -513,7 +513,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1352104278}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1028246286
@@ -598,7 +598,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1352104275
 GameObject:
@@ -613,6 +613,7 @@ GameObject:
   - component: {fileID: 1352104280}
   - component: {fileID: 1352104282}
   - component: {fileID: 1352104281}
+  - component: {fileID: 1352104283}
   m_Layer: 0
   m_Name: Player Ship
   m_TagString: Untagged
@@ -684,10 +685,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 438838325}
   - {fileID: 1565688969}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1352104280
 BoxCollider2D:
@@ -743,6 +743,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!50 &1352104283
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352104275}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1565688968
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,7 +794,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1352104278}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1565688970
 MonoBehaviour:
@@ -787,7 +808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0397a9c1e40b8149ba7912e4b6e12ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 1565688969}
   playerBullet: {fileID: 1207972387416756503, guid: e4a2fa085d0079242adc3c07fa1caf4c, type: 3}
 --- !u!1001 &5917166295530963728
 PrefabInstance:
@@ -798,7 +818,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 680814443871133353, guid: e4a2fa085d0079242adc3c07fa1caf4c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 680814443871133353, guid: e4a2fa085d0079242adc3c07fa1caf4c, type: 3}
       propertyPath: m_LocalPosition.x
