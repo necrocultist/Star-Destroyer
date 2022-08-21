@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyYAxisSpeed: -2
   enemyXAxisSpeed: 2
-  toPlayerOffset: 7
+  toPlayerOffset: 3
   player: {fileID: 7849172152101590283, guid: e6062fae43bb53e4db5dc01b864cbbb5, type: 3}
 --- !u!1 &3438488516179675860
 GameObject:
