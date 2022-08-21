@@ -1719,7 +1719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4873901476956135140, guid: f6ec8ed630ef58b4dabc59a84974a12b, type: 3}
-  enemySpawnDuration: 5
+  enemySpawnDuration: 3
   enemyDieDuration: 1
   playerHealth: {fileID: 7849172152101590273, guid: e6062fae43bb53e4db5dc01b864cbbb5, type: 3}
 --- !u!4 &838607658
@@ -2360,7 +2360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 3086265164844643691, guid: e5a43cd1f38579348b26d824d91a128e, type: 3}
-  enemySpawnDuration: 3
+  enemySpawnDuration: 2
   enemyDieDuration: 1
   playerHealth: {fileID: 7849172152101590273, guid: e6062fae43bb53e4db5dc01b864cbbb5, type: 3}
 --- !u!1 &1221058560
@@ -3368,7 +3368,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 14.263397, y: 0, z: 0.620495, w: 0.36309814}
+  m_margin: {x: -214.73822, y: 0, z: 0.620495, w: 0.36309814}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3399,7 +3399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -30.599976, y: -83.1}
+  m_AnchoredPosition: {x: 35.6, y: -83.100006}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &1947728603
