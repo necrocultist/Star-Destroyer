@@ -3,8 +3,11 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    private int currentHealth;
+    [SerializeField] private int currentHealth;
     [SerializeField] private int contactDamage;
+
+    [SerializeField] private GameObject bulletDestroyEffect;
+    [SerializeField] private float bulletDestroyTime;
 
     private Vector3 scaleChange = new Vector3(0.2f, 0.2f, 0f);
     [SerializeField] private GameManager gm;
@@ -72,5 +75,13 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("There is no gameObject this" + name + "collides.");
         }
+    }
+
+    public void DestroyEnemyBullet(GameObject enemyBullet, Vector2 contact)
+    {
+        Destroy(enemyBullet);
+        //enemyBullet.SetActive(false);
+        GameObject destroyedObject = Instantiate(bulletDestroyEffect, contact, Quaternion.identity);
+        Destroy(destroyedObject, bulletDestroyTime);
     }
 }

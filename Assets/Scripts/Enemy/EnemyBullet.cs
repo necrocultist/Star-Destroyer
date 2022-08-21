@@ -17,14 +17,14 @@ public class EnemyBullet : MonoBehaviour
         GameObject gameObject = other.gameObject;
         Vector2 contactPoint = other.GetContact(0).point;
 
-        if (gameObject != null)
+        if (other.gameObject != null)
         {
             if (gameObject.TryGetComponent(out PlayerHealth player) || gameObject.TryGetComponent(out PlayerGun _))
             {
+
                 player.DecraseHealth(enemyBulletDamage);
 
-                DestroyEnemyBullet(contactPoint);
-                DestroyBullet();
+                player.DestroyEnemyBullet(this.gameObject, contactPoint);
             }
         }
         else
@@ -33,15 +33,15 @@ public class EnemyBullet : MonoBehaviour
         }
     }
 
-    private void DestroyEnemyBullet(Vector2 player)
-    {
-        gameObject.SetActive(false);
-        GameObject destroyedObject = Instantiate(bulletDestroyEffect, player, Quaternion.identity);
-        Destroy(destroyedObject, destroyTime);
-    }
+    //private void DestroyBullet()
+    //{
 
-    private void DestroyBullet()
-    {
-        Destroy(gameObject);
-    }
+    //}
+
+    //public void DestroyEnemyBullet(Vector2 player)
+    //{
+    //    gameObject.SetActive(false);
+    //    GameObject destroyedObject = Instantiate(bulletDestroyEffect, player, Quaternion.identity);
+    //    Destroy(destroyedObject, destroyTime);
+    //}
 }

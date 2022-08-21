@@ -3,7 +3,10 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    private int currentHealth;
+    [SerializeField] private int currentHealth;
+    [SerializeField] private GameObject bulletDestroyEffect;
+    [SerializeField] private float destroyTime;
+
 
     private void OnEnable()
     {
@@ -38,5 +41,12 @@ public class EnemyHealth : MonoBehaviour
     private void ResetHealth()
     {
         currentHealth = maxHealth;
+    }
+
+    public void DestroyPlayerBullet(GameObject playerBullet, Vector2 contact)
+    {
+        Destroy(playerBullet);
+        GameObject destroyedObject = Instantiate(bulletDestroyEffect, contact, Quaternion.identity);
+        Destroy(destroyedObject, destroyTime);
     }
 }
