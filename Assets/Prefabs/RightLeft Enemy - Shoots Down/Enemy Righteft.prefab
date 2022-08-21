@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6597507866017580448}
   - component: {fileID: 3438488515674811869}
   - component: {fileID: 6307680414388246859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Righteft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 3438488516179675861}
   - component: {fileID: 5812545291975771676}
   - component: {fileID: 4379630384094521889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

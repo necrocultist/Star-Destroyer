@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4873901476837225397}
   - component: {fileID: 4873901476837225396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 6599398501776087402}
   - component: {fileID: 4873901476956135137}
   - component: {fileID: 1367010749199532512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Circular
   m_TagString: Untagged
   m_Icon: {fileID: 0}

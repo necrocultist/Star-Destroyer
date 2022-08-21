@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3085be192f8e2c48a43ad599718ddbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteriodContactDamage: 100
-  asteroidDestroyTime: 3
+  asteriodContactDamage: 1
+  asteroidDestroyTime: 2
   bulletDestroyEffect: {fileID: 8112302006766880307, guid: afbe918889c20c64f8c810bc72b754f1, type: 3}
   destroyTime: 0.07

@@ -17,8 +17,6 @@ public class Asteroidmk : MonoBehaviour
         {
             if (target.TryGetComponent(out PlayerHealth player) || target.TryGetComponent(out PlayerGun _))
             {
-                Debug.Log("a");
-
                 player.DecraseHealth(asteriodContactDamage);
 
                 DestroyObject();
