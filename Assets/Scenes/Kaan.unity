@@ -1123,6 +1123,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7849172152101590273, guid: e6062fae43bb53e4db5dc01b864cbbb5, type: 3}
+      propertyPath: healths.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849172152101590273, guid: e6062fae43bb53e4db5dc01b864cbbb5, type: 3}
       propertyPath: healths.Array.data[0]
       value: 
       objectReference: {fileID: 1706593521}

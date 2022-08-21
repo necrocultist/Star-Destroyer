@@ -153,7 +153,7 @@ MonoBehaviour:
   currentHealth: 5
   contactDamage: 1
   bulletDestroyEffect: {fileID: 8112302006766880307, guid: f9c383f4c0499f146a8b8e89cda22fba, type: 3}
-  bulletDestroyTime: 1
+  bulletDestroyTime: 0.07
   gm: {fileID: 0}
   healths:
   - {fileID: 0}
