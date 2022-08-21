@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-    public Transform[] spawnPoints;
-    private int randomSpawnPoint;
+    [SerializeField] private int asteriodContactDamage;
+    [SerializeField]  private float asteroidDestroyTime;
+    [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private float asteroidSpawnTime;
     [SerializeField] private GameObject asteroid;
+    private int randomSpawnPoint;
+
     void Start()
     {
         StartCoroutine(SpawnAsteroid());
@@ -21,11 +24,30 @@ public class Asteroid : MonoBehaviour
         {
             Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, 135)));
         }
-        else if(spawnPoints[randomSpawnPoint].position.x < 0)
+        else if (spawnPoints[randomSpawnPoint].position.x < 0)
         {
             Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, -135)));
         }
-        
-}
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject target = collision.gameObject;
+
+        if (target != null)
+        {
+            if (gameObject.TryGetComponent(out PlayerHealth player) || gameObject.TryGetComponent(out PlayerGun _))
+            {
+
+                player.DecraseHealth(asteriodContactDamage);
+
+                DestroyAsteroid();
+            }
+        }
+    }
+
+    private void DestroyAsteroid()
+    {
+        Destroy(this, asteroidDestroyTime);
+    }
 }

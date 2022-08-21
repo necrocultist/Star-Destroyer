@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3086265164844643695}
   - component: {fileID: 3086265164844643694}
   - component: {fileID: 3086265164844643693}
-  - component: {fileID: 3086265164844643690}
   - component: {fileID: 6839952660085759255}
+  - component: {fileID: 3086265164844643690}
   - component: {fileID: 3086265164844643696}
   m_Layer: 0
   m_Name: Enemy Straight
@@ -110,22 +110,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3086265164844643690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3086265164844643691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ac65bbaa3a533a4d84d34314294b96c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 30
-  currentHealth: 30
-  bulletDestroyEffect: {fileID: 8112302006766880307, guid: 76811e29733b22342a58f8e35350c94d, type: 3}
-  destroyTime: 0.07
 --- !u!61 &6839952660085759255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -152,6 +136,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2343293, y: 1.1130139}
   m_EdgeRadius: 0
+--- !u!114 &3086265164844643690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086265164844643691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac65bbaa3a533a4d84d34314294b96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  currentHealth: 30
+  bulletDestroyEffect: {fileID: 8112302006766880307, guid: 76811e29733b22342a58f8e35350c94d, type: 3}
+  destroyTime: 0.07
 --- !u!114 &3086265164844643696
 MonoBehaviour:
   m_ObjectHideFlags: 0
