@@ -167,7 +167,7 @@ MonoBehaviour:
   enemyYAxisSpeed: -2
   enemyXAxisSpeed: 2
   toPlayerOffset: 7
-  player: {fileID: 0}
+  player: {fileID: 7849172152101590283, guid: e6062fae43bb53e4db5dc01b864cbbb5, type: 3}
 --- !u!1 &3438488516179675860
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +179,6 @@ GameObject:
   - component: {fileID: 3438488516179675861}
   - component: {fileID: 5812545291975771676}
   - component: {fileID: 4379630384094521889}
-  - component: {fileID: 4819024655284974079}
   m_Layer: 0
   m_Name: Spawn Point
   m_TagString: Untagged
@@ -229,20 +228,6 @@ BoxCollider2D:
   m_Size: {x: 0.5345509, y: 0.40820968}
   m_EdgeRadius: 0
 --- !u!114 &4379630384094521889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3438488516179675860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6a2d743d69359f4a9a2ac11acfaf5eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 779177889240866409, guid: 796b0367067c37d4eafc154e250a05ed, type: 3}
-  bulletSpawnDuration: 1
---- !u!114 &4819024655284974079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

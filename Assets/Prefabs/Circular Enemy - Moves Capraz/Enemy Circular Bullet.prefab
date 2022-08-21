@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fc2c1126a061b4fab198cd4319d2c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBulletDamage: 10
-  bulletSpeed: -5
+  enemyBulletDamage: 1
+  bulletSpeed: -3
   bulletDestroyEffect: {fileID: 8112302006766880307, guid: 297fa37630042fa4b9b28bbc5a48cffb, type: 3}
   destroyTime: 0.01
