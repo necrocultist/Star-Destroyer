@@ -22,11 +22,12 @@ public class EnemySpawner : MonoBehaviour
     {
         while (playerHealth.AliveCheck())
         {
+            yield return new WaitForSeconds(enemySpawnDuration);
             clone = Instantiate(enemyPrefab,
                     new Vector3(Random.Range(-screenHalfSizeWorldUnits.x, screenHalfSizeWorldUnits.x),
                         (transform.position.y)), Quaternion.identity);
             KillEnemy();
-            yield return new WaitForSeconds(enemySpawnDuration);
+            
         }
     }
 
