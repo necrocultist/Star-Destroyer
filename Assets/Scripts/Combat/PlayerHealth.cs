@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject bulletDestroyEffect;
     [SerializeField] private float bulletDestroyTime;
 
-    private Vector3 scaleChange = new Vector3(0.2f, 0.2f, 0f);
+    private Vector3 scaleChange = new Vector3(0.17f, 0.17f, 0f);
     [SerializeField] private GameManager gm;
     public GameObject[] healths;
     private int index = 0;
