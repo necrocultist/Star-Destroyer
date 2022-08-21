@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6105684591977781793}
   - component: {fileID: 350780642780749042}
   - component: {fileID: -6154566388098432687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy Straight Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

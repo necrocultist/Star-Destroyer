@@ -22,8 +22,10 @@ public class EnemyRightLeft : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+       
         if (other.gameObject.layer == 3)
         {
+            Debug.Log("yes");
             enemyXAxisSpeed *= -1;
         }
     }
