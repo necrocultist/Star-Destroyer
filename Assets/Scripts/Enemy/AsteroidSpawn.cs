@@ -16,16 +16,20 @@ public class AsteroidSpawn : MonoBehaviour
 
     public IEnumerator SpawnAsteroid()
     {
-        yield return new WaitForSeconds(asteroidSpawnTime);
-        randomSpawnPoint = Random.Range(0, spawnPoints.Length);
+        while (true)
+        {
+            yield return new WaitForSeconds(asteroidSpawnTime);
+            randomSpawnPoint = Random.Range(0, spawnPoints.Length);
         
-        if (spawnPoints[randomSpawnPoint].position.x > 0)
-        {
-            Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, 135)));
+            if (spawnPoints[randomSpawnPoint].position.x > 0)
+            {
+                Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, 135)));
+            }
+            else if (spawnPoints[randomSpawnPoint].position.x < 0)
+            {
+                Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, -135)));
+            }
         }
-        else if (spawnPoints[randomSpawnPoint].position.x < 0)
-        {
-            Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, -135)));
-        }
+        
     }
 }
