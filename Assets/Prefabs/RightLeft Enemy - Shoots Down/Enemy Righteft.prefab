@@ -240,4 +240,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 779177889240866409, guid: 796b0367067c37d4eafc154e250a05ed, type: 3}
-  bulletSpawnDuration: 1
+  bulletSpawnDuration: 3

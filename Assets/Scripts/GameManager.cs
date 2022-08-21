@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +13,7 @@ public class GameManager : MonoBehaviour
     public States currentState;
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject endPanel;
-    
+    [SerializeField] private GameObject gamePanel;
 
     void Start()
     {
@@ -30,10 +27,16 @@ public class GameManager : MonoBehaviour
         {
             case States.TapToStart:
                 startPanel.SetActive(true);
+                gamePanel.SetActive(false);
                 endPanel.SetActive(false);
+                break;
+            case States.Playing:
+                startPanel.SetActive(false);
+                gamePanel.SetActive(true);
                 break;
             case States.Fail:
                 Time.timeScale = 0;
+                gamePanel.SetActive(false);
                 endPanel.SetActive(true);
                 break;
         }

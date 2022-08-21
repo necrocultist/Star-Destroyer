@@ -6,6 +6,8 @@ public class CircularShoot : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     private GameObject[] bullets;
+    [SerializeField] private float bulletSpawnDuration;
+
     void Start()
     {
         StartCoroutine(SpawnCircular());
@@ -22,7 +24,7 @@ public class CircularShoot : MonoBehaviour
                 Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, x)));
                 x += 45;
             }
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(bulletSpawnDuration);
         }
     }
 }

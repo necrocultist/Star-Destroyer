@@ -20,13 +20,13 @@ public class TripleShoot : MonoBehaviour
     {
         while (isShootAvailable)
         {
-            int x = -15;
+            int x = -30;
             bullets = new GameObject[3];
 
             for (int i = 0; i < bullets.Length; i++)
             {
                 Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, x)));
-                x += 15;
+                x += 30;
             }
             yield return new WaitForSeconds(bulletSpawnDuration);
         }

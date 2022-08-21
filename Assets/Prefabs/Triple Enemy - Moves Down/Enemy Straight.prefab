@@ -123,7 +123,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0020412803, y: 0.16159193}
+  m_Offset: {x: 0.0020412803, y: 0.123677865}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -134,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2343293, y: 1.1130139}
+  m_Size: {x: 1.2343293, y: 1.0371857}
   m_EdgeRadius: 0
 --- !u!114 &3086265164844643690
 MonoBehaviour:
@@ -174,8 +174,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3086265165479596642}
-  - component: {fileID: 3086265165479596644}
   - component: {fileID: 5758370875079403327}
+  - component: {fileID: 3086265165479596644}
   m_Layer: 6
   m_Name: Spawn Point
   m_TagString: Untagged
@@ -198,21 +198,6 @@ Transform:
   m_Father: {fileID: 3086265164844643695}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3086265165479596644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3086265165479596643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 234db28be81681246a00f12f19032d72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullets: []
-  bulletPrefab: {fileID: 779177889240866409, guid: 1dd250badb21185418d5550ffbf8ef07, type: 3}
-  bulletSpawnDuration: 1
 --- !u!61 &5758370875079403327
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -239,3 +224,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8023991, y: 0.2480542}
   m_EdgeRadius: 0
+--- !u!114 &3086265165479596644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086265165479596643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234db28be81681246a00f12f19032d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullets: []
+  bulletPrefab: {fileID: 779177889240866409, guid: 1dd250badb21185418d5550ffbf8ef07, type: 3}
+  bulletSpawnDuration: 3
