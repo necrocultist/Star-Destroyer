@@ -148,9 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da6a801ab8fb6d4b804cb688385d794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  currentHealth: 50
-  contactDamage: 50
+  maxHealth: 5000
+  currentHealth: 5000
+  contactDamage: 3
   bulletDestroyEffect: {fileID: 8112302006766880307, guid: f9c383f4c0499f146a8b8e89cda22fba, type: 3}
   bulletDestroyTime: 0
   gm: {fileID: 0}

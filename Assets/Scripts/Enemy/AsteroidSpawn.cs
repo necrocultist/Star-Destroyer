@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour
+public class AsteroidSpawn : MonoBehaviour
 {
-    [SerializeField] private int asteriodContactDamage;
-    [SerializeField]  private float asteroidDestroyTime;
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private float asteroidSpawnTime;
     [SerializeField] private GameObject asteroid;
@@ -20,6 +18,7 @@ public class Asteroid : MonoBehaviour
     {
         yield return new WaitForSeconds(asteroidSpawnTime);
         randomSpawnPoint = Random.Range(0, spawnPoints.Length);
+        
         if (spawnPoints[randomSpawnPoint].position.x > 0)
         {
             Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, 135)));
@@ -28,26 +27,5 @@ public class Asteroid : MonoBehaviour
         {
             Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, -135)));
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        GameObject target = collision.gameObject;
-
-        if (target != null)
-        {
-            if (gameObject.TryGetComponent(out PlayerHealth player) || gameObject.TryGetComponent(out PlayerGun _))
-            {
-
-                player.DecraseHealth(asteriodContactDamage);
-
-                DestroyAsteroid();
-            }
-        }
-    }
-
-    private void DestroyAsteroid()
-    {
-        Destroy(this, asteroidDestroyTime);
     }
 }
