@@ -31,7 +31,11 @@ public class PlayerBullet : MonoBehaviour
                 enemy.DecraseHealth(playerBulletDamage);
 
                 enemy.DestroyPlayerBullet(this.gameObject, contactPoint);
-                //DestroyPlayerBullet(contactPoint);
+                DestroyBullet();
+            }
+            else if(gameObject.TryGetComponent(out Asteroidmk asteroid))
+            {
+                asteroid.DestroyPlayerBullet(this.gameObject,contactPoint);
                 DestroyBullet();
             }
         }
@@ -41,12 +45,12 @@ public class PlayerBullet : MonoBehaviour
         }
     }
 
-    private void DestroyPlayerBullet(Vector2 enemy)
-    {
-        gameObject.SetActive(false);
-        GameObject destroyedObject =  Instantiate(bulletDestroyEffect, enemy, Quaternion.identity);
-        Destroy(destroyedObject, destroyTime);
-    }
+    //private void DestroyPlayerBullet(Vector2 enemy)
+    //{
+    //    gameObject.SetActive(false);
+    //    GameObject destroyedObject =  Instantiate(bulletDestroyEffect, enemy, Quaternion.identity);
+    //    Destroy(destroyedObject, destroyTime);
+    //}
 
     private void DestroyBullet()
     {

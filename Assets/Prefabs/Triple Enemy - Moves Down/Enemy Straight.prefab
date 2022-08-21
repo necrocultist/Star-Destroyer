@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6839952660085759255}
   - component: {fileID: 3086265164844643690}
   - component: {fileID: 3086265164844643696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 3086265165479596642}
   - component: {fileID: 3086265165479596644}
   - component: {fileID: 5758370875079403327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

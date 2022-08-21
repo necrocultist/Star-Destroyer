@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5398126691370307676}
   - component: {fileID: 6711542156210010390}
   - component: {fileID: 8464345144336585111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asteroid Grey 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 645dd3f537a64114cbd224d1969005ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,7 +108,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &5398126691370307676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,5 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3085be192f8e2c48a43ad599718ddbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteriodContactDamage: 1
+  asteriodContactDamage: 100
   asteroidDestroyTime: 3
+  bulletDestroyEffect: {fileID: 8112302006766880307, guid: afbe918889c20c64f8c810bc72b754f1, type: 3}
+  destroyTime: 0.07
