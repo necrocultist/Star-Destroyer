@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerGun : MonoBehaviour
 {
     [SerializeField] private GameObject playerBullet;
+    [SerializeField] private GameManager gm;
 
     void Update()
     {
@@ -11,7 +12,7 @@ public class PlayerGun : MonoBehaviour
 
     void ShootBullets()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && gm.currentState == States.Playing)
         {
             if (playerBullet != null)
             {

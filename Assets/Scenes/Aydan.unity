@@ -259,6 +259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 7849172152306804951, guid: e6062fae43bb53e4db5dc01b864cbbb5, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 134116720}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6062fae43bb53e4db5dc01b864cbbb5, type: 3}
 --- !u!1 &173707918
