@@ -11,9 +11,9 @@ public class Background : MonoBehaviour
     {
         transform.position += new Vector3(0, backgroundSpeed * Time.deltaTime, 0);
 
-        if(transform.position.y <= -7)
+        if(transform.position.y <= -10.1)
         {
-            transform.position = new Vector3(transform.position.x, 13, 0);
+            transform.position = new Vector3(transform.position.x, 10.1f, 0);
         }
     }
 }

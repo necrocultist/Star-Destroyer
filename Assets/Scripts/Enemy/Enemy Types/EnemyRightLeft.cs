@@ -25,7 +25,6 @@ public class EnemyRightLeft : MonoBehaviour
         
         if (other.gameObject.layer == 3)
         {
-            Debug.Log(other.name);
             enemyXAxisSpeed *= -1;
         }
     }
