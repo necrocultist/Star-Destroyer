@@ -6,10 +6,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int currentHealth;
     [SerializeField] private GameObject bulletDestroyEffect;
     [SerializeField] private float destroyTime;
-
+    [SerializeField] private Score[] scoreTexts;
+    [SerializeField] private float scorePerKill;
 
     private void OnEnable()
     {
+        //foreach (Score score in scoreTexts)
+        //scoreTexts = FindObjectOfType<Score>();
         ResetHealth();
     }
 
@@ -35,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void DestroyObject()
     {
+        scoreText.score += scorePerKill;
         Destroy(gameObject);
     }
 

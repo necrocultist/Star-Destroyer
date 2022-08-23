@@ -148,10 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac65bbaa3a533a4d84d34314294b96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  currentHealth: 30
+  maxHealth: 20
+  currentHealth: 20
   bulletDestroyEffect: {fileID: 8112302006766880307, guid: 4bc1ba724fadbfb49be3f5b6a8886211, type: 3}
   destroyTime: 0.07
+  scoreText: {fileID: 0}
+  scorePerKill: 100
 --- !u!114 &6307680414388246859
 MonoBehaviour:
   m_ObjectHideFlags: 0
