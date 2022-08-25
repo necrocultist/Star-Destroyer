@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void DestroyObject()
     {
-        scoreText.score += scorePerKill;
+        //scoreText.score += scorePerKill;
         Destroy(gameObject);
     }
 
