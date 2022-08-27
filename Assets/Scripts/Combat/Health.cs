@@ -12,8 +12,9 @@ public abstract class Health : MonoBehaviour
     [SerializeField] protected float destroyTime;
     
     [SerializeField] protected GameObject bullet;
+   
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         ResetHealth();
     }

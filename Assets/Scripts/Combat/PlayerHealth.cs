@@ -1,11 +1,21 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : Health
 {
-    private Vector3 scaleChange = new Vector3(0.17f, 0.17f, 0f);
+    private Vector3 scaleChangeAmount = new Vector3(0.17f, 0.17f, 0f);
     [SerializeField] private GameManager gm;
     public GameObject[] healths;
     private int index = 0;
+
+    public static event Action OnHealthDescreasement;
+    public static event Action OnPlayerDie;
+
+    protected override void OnEnable()
+    {
+        OnHealthDescreasement += ScaleChange;
+    }
     
     public void DecraseHealth(int damage)
     {
@@ -14,7 +24,7 @@ public class PlayerHealth : Health
         if (!AliveCheck())
         {
             DestroyObject();
-            gm.currentState = States.Fail;
+            OnPlayerDie?.Invoke();
         }
 
         else
@@ -22,7 +32,7 @@ public class PlayerHealth : Health
             Destroy(healths[index]);
             index++;
         }
-        transform.localScale += scaleChange;
+        OnHealthDescreasement?.Invoke();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -45,5 +55,15 @@ public class PlayerHealth : Health
     public void DestroyObject()
     {
         Destroy(gameObject);
+    }
+
+    public void ScaleChange()
+    {
+        transform.localScale += scaleChangeAmount;
+    }
+
+    private void OnDisable()
+    {
+        OnHealthDescreasement -= ScaleChange;
     }
 }

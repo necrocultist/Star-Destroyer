@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +16,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject gamePanel;
+    [SerializeField] private PlayerHealth ph;
+
+    private void OnEnable()
+    {
+         
+    }
 
     void Start()
     {
@@ -47,6 +55,11 @@ public class GameManager : MonoBehaviour
         startPanel.SetActive(false);
         currentState = States.Playing;
         Time.timeScale = 1;
+    }
+
+    public void StatetoFail()
+    {
+        currentState = States.Fail;
     }
 
     public void Restart()
