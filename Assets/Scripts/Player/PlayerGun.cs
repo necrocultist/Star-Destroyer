@@ -4,6 +4,9 @@ public class PlayerGun : MonoBehaviour
 {
     [SerializeField] private GameObject playerBullet;
     [SerializeField] private GameManager gm;
+    [SerializeField] private float nextFire = 0.2F;
+    private float myTime = 0.0F;
+    private float fireDelta = 0.2F;
 
     void Update()
     {
@@ -12,16 +15,18 @@ public class PlayerGun : MonoBehaviour
 
     void ShootBullets()
     {
-        if (Input.GetMouseButtonDown(0) && gm.currentState == States.Playing)
+        myTime += Time.deltaTime;
+        
+        if (Input.GetButton("Fire1")  && gm.currentState == States.Playing && myTime > nextFire)
         {
+            nextFire = myTime + fireDelta;
             if (playerBullet != null)
             {
                 Instantiate(playerBullet, transform.position, transform.rotation);
             }
-            else
-            {
-                Debug.Log("Either Bullet Spawn Point Or Bullet Prefab Are Empty");
-            }
+            nextFire = nextFire - myTime;
+
+            myTime = 0f;
         }
     }
 }
