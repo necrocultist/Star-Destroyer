@@ -23,7 +23,6 @@ public class PlayerHealth : Health
             index++;
         }
         transform.localScale += scaleChange;
-
     }
 
     private void OnCollisionEnter2D(Collision2D other)
