@@ -13,6 +13,10 @@ public abstract class Health : MonoBehaviour
     
     [SerializeField] protected GameObject bullet;
 
+    private void OnEnable()
+    {
+        ResetHealth();
+    }
     protected void ResetHealth()
     {
         currentHealth = maxHealth;

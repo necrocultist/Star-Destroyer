@@ -6,13 +6,7 @@ public class PlayerHealth : Health
     [SerializeField] private GameManager gm;
     public GameObject[] healths;
     private int index = 0;
-
-
-    private void OnEnable()
-    {
-        ResetHealth();
-    }
-
+    
     public void DecraseHealth(int damage)
     {
         currentHealth -= damage;

@@ -2,11 +2,6 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
-    private void OnEnable()
-    {
-        ResetHealth();
-    }
-
     public void DecraseHealth(int damage)
     {
         currentHealth -= damage;
