@@ -16,7 +16,7 @@ public class PlayerBullet : Bullet
             {
                 enemy.DecraseHealth(bulletDamage);
 
-                enemy.DestroyPlayerBullet(this.gameObject, contactPoint);
+                enemy.DestroyBullet(this.gameObject, contactPoint);
                 DestroyBullet();
             }
             else if (gameObject.TryGetComponent(out Asteroidmk asteroid))

@@ -152,8 +152,9 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 5
   contactDamage: 1
-  bulletDestroyEffect: {fileID: 8112302006766880307, guid: f9c383f4c0499f146a8b8e89cda22fba, type: 3}
-  bulletDestroyTime: 0.07
+  destroyEffect: {fileID: 8112302006766880307, guid: f9c383f4c0499f146a8b8e89cda22fba, type: 3}
+  destroyTime: 0
+  bullet: {fileID: 8589804177474919494, guid: ae5314a48ace558498a4db23e242f2e5, type: 3}
   gm: {fileID: 0}
   healths:
   - {fileID: 0}
@@ -234,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBullet: {fileID: 8589804177474919494, guid: ae5314a48ace558498a4db23e242f2e5, type: 3}
   gm: {fileID: 0}
+  nextFire: 0.2
 --- !u!61 &7849172152306804950
 BoxCollider2D:
   m_ObjectHideFlags: 0

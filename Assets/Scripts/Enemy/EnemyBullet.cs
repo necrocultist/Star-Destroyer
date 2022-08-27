@@ -15,7 +15,7 @@ public class EnemyBullet : Bullet
 
                 player.DecraseHealth(bulletDamage);
 
-                player.DestroyEnemyBullet(this.gameObject, contactPoint);
+                player.DestroyBullet(this.gameObject, contactPoint);
             }
         }
         else

@@ -150,10 +150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 20
-  bulletDestroyEffect: {fileID: 8112302006766880307, guid: 4bc1ba724fadbfb49be3f5b6a8886211, type: 3}
+  contactDamage: 0
+  destroyEffect: {fileID: 8112302006766880307, guid: 4bc1ba724fadbfb49be3f5b6a8886211, type: 3}
   destroyTime: 0.07
-  scoreText: {fileID: 0}
-  scorePerKill: 100
+  bullet: {fileID: 779177889240866409, guid: 796b0367067c37d4eafc154e250a05ed, type: 3}
 --- !u!114 &6307680414388246859
 MonoBehaviour:
   m_ObjectHideFlags: 0
