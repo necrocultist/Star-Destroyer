@@ -3,23 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public class PlayerBullet : Bullet
 {
-    [SerializeField] private float playerBulletSpeed;
-    [SerializeField] private int playerBulletDamage;
-    [SerializeField] private GameObject bulletDestroyEffect;
-    [SerializeField] private float destroyTime;
-
-    void FixedUpdate()
-    {
-        PlayerBulletMove();
-    }
-
-    private void PlayerBulletMove()
-    {
-        transform.Translate(new Vector2(0, playerBulletSpeed * Time.fixedDeltaTime));
-    }
-    private void OnCollisionEnter2D(Collision2D other)
+    protected override void OnCollisionEnter2D(Collision2D other)
     {
         GameObject gameObject = other.gameObject;
         Vector2 contactPoint = other.GetContact(0).point;
@@ -28,14 +14,14 @@ public class PlayerBullet : MonoBehaviour
         {
             if (gameObject.TryGetComponent(out EnemyHealth enemy) || gameObject.TryGetComponent(out EnemySpawner _))
             {
-                enemy.DecraseHealth(playerBulletDamage);
+                enemy.DecraseHealth(bulletDamage);
 
                 enemy.DestroyPlayerBullet(this.gameObject, contactPoint);
                 DestroyBullet();
             }
-            else if(gameObject.TryGetComponent(out Asteroidmk asteroid))
+            else if (gameObject.TryGetComponent(out Asteroidmk asteroid))
             {
-                asteroid.DestroyPlayerBullet(this.gameObject,contactPoint);
+                asteroid.DestroyPlayerBullet(this.gameObject, contactPoint);
                 DestroyBullet();
             }
         }
@@ -44,13 +30,6 @@ public class PlayerBullet : MonoBehaviour
             Debug.Log("There is no gameObject this" + name + "collides.");
         }
     }
-
-    //private void DestroyPlayerBullet(Vector2 enemy)
-    //{
-    //    gameObject.SetActive(false);
-    //    GameObject destroyedObject =  Instantiate(bulletDestroyEffect, enemy, Quaternion.identity);
-    //    Destroy(destroyedObject, destroyTime);
-    //}
 
     private void DestroyBullet()
     {

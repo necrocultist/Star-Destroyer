@@ -1,18 +1,9 @@
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : Bullet
 {
-    [SerializeField] private int enemyBulletDamage;
-    [SerializeField] private float bulletSpeed;
-    [SerializeField] private GameObject bulletDestroyEffect;
-    [SerializeField] private float destroyTime;
 
-    void FixedUpdate()
-    {
-        transform.Translate(new Vector2(0, bulletSpeed * Time.fixedDeltaTime));
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
+    protected override void OnCollisionEnter2D(Collision2D other)
     {
         GameObject gameObject = other.gameObject;
         Vector2 contactPoint = other.GetContact(0).point;
@@ -22,7 +13,7 @@ public class EnemyBullet : MonoBehaviour
             if (gameObject.TryGetComponent(out PlayerHealth player) || gameObject.TryGetComponent(out PlayerGun _))
             {
 
-                player.DecraseHealth(enemyBulletDamage);
+                player.DecraseHealth(bulletDamage);
 
                 player.DestroyEnemyBullet(this.gameObject, contactPoint);
             }
@@ -32,16 +23,4 @@ public class EnemyBullet : MonoBehaviour
             Debug.Log("There is no gameObject this" + name + "collides.");
         }
     }
-
-    //private void DestroyBullet()
-    //{
-
-    //}
-
-    //public void DestroyEnemyBullet(Vector2 player)
-    //{
-    //    gameObject.SetActive(false);
-    //    GameObject destroyedObject = Instantiate(bulletDestroyEffect, player, Quaternion.identity);
-    //    Destroy(destroyedObject, destroyTime);
-    //}
 }
