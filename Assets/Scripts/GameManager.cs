@@ -20,7 +20,12 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-         
+        ph.OnPlayerDie += StatetoFail;
+    }
+    
+    private void OnDisable()
+    {
+        ph.OnPlayerDie -= StatetoFail;
     }
 
     void Start()
@@ -66,4 +71,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+
 }

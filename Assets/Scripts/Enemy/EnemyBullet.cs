@@ -1,8 +1,8 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBullet : Bullet
 {
-
     protected override void OnCollisionEnter2D(Collision2D other)
     {
         GameObject gameObject = other.gameObject;
@@ -15,7 +15,7 @@ public class EnemyBullet : Bullet
 
                 player.DecraseHealth(bulletDamage);
 
-                player.DestroyBullet(this.gameObject, contactPoint);
+                DestroyBullet(contactPoint);
             }
         }
         else

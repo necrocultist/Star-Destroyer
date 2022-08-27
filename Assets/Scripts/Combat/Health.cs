@@ -33,11 +33,6 @@ public abstract class Health : MonoBehaviour
         return currentHealth > 0;
     }
 
-    public void DestroyBullet(GameObject bullet, Vector2 contact)
-    {
-        Destroy(bullet);
-        GameObject destroyedObject = Instantiate(destroyEffect, contact, Quaternion.identity);
-        Destroy(destroyedObject, destroyTime);
-    }
+   
 }
 

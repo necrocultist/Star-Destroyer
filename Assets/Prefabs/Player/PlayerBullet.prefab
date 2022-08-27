@@ -126,5 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletDamage: 10
   bulletSpeed: 7
-  bulletDestroyEffect: {fileID: 8112302006766880307, guid: f9c383f4c0499f146a8b8e89cda22fba, type: 3}
+  destroyEffect: {fileID: 8112302006766880307, guid: f9c383f4c0499f146a8b8e89cda22fba, type: 3}
   destroyTime: 0.1

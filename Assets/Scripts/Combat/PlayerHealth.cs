@@ -9,21 +9,25 @@ public class PlayerHealth : Health
     public GameObject[] healths;
     private int index = 0;
 
-    public static event Action OnHealthDescreasement;
-    public static event Action OnPlayerDie;
+    public event Action OnHealthDescreasement;
+    public event Action OnPlayerDie;
 
     protected override void OnEnable()
     {
         OnHealthDescreasement += ScaleChange;
     }
     
+    private void OnDisable()
+    {
+        OnHealthDescreasement -= ScaleChange;
+    }
     public void DecraseHealth(int damage)
     {
         currentHealth -= damage;
         
         if (!AliveCheck())
         {
-            DestroyObject();
+            gameObject.SetActive(false);
             OnPlayerDie?.Invoke();
         }
 
@@ -60,10 +64,5 @@ public class PlayerHealth : Health
     public void ScaleChange()
     {
         transform.localScale += scaleChangeAmount;
-    }
-
-    private void OnDisable()
-    {
-        OnHealthDescreasement -= ScaleChange;
     }
 }
