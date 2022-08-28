@@ -6,10 +6,9 @@ public class GameScore : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private float scorePerSecond;
+    [SerializeField] private GameManager gm;
 
     private float score;
-    [Range(1, 2)]
-    [SerializeField] private int scoreSelection;
     void Start()
     {
         score = 0;
@@ -17,15 +16,13 @@ public class GameScore : MonoBehaviour
 
     void Update()
     {
-        switch (scoreSelection)
+        if (gm.currentState == States.Playing)
         {
-            case 1:
-                ScorePanel();
-                break;
-
-            case 2:
-                ScoreEndPanel();
-                break;
+            ScorePanel();
+        }
+        else if (gm.currentState == States.Fail)
+        {
+            ScoreEndPanel();
         }
     }
 
