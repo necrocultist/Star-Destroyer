@@ -6,8 +6,11 @@ public class GameScore : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private float scorePerSecond;
+<<<<<<< HEAD
     [SerializeField] private GameManager gm;
 
+=======
+>>>>>>> c9ec327a1e8a11ce5f5baaba02702dd7b29489ba
     private float score;
     void Start()
     {
