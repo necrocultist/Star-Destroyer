@@ -11,10 +11,10 @@ public class LinearShoot : MonoBehaviour
     private void OnEnable()
     {
         isShootAvailable = true;
-        StartCoroutine(SpawnBullet());
+        StartCoroutine(SpawnLinearBullet());
     }
 
-    public IEnumerator SpawnBullet()
+    public IEnumerator SpawnLinearBullet()
     {
         while (isShootAvailable)
         {

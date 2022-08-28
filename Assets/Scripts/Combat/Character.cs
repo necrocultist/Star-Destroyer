@@ -1,23 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Health : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
     [SerializeField] protected int maxHealth;
     [SerializeField] protected int currentHealth;
-    [SerializeField] protected int contactDamage;
-
-    [SerializeField] protected GameObject destroyEffect;
-    [SerializeField] protected float destroyTime;
-    
-    [SerializeField] protected GameObject bullet;
-   
+    [SerializeField] protected GameObject bulletDestroyEffect;
+    [SerializeField] private float bulletDestroyTime;
 
     protected virtual void OnEnable()
     {
         ResetHealth();
     }
+
     protected void ResetHealth()
     {
         currentHealth = maxHealth;
@@ -33,6 +27,9 @@ public abstract class Health : MonoBehaviour
         return currentHealth > 0;
     }
 
-   
+   public void CreateBulletDestroyEffect(Vector2 contactPoint)
+    {
+        GameObject destroyEffect = Instantiate(bulletDestroyEffect, contactPoint, Quaternion.identity);
+        Destroy(destroyEffect, bulletDestroyTime);
+    }
 }
-

@@ -10,12 +10,13 @@ public class EnemyBullet : Bullet
 
         if (other.gameObject != null)
         {
-            if (gameObject.TryGetComponent(out PlayerHealth player) || gameObject.TryGetComponent(out PlayerGun _))
+            if (gameObject.TryGetComponent(out PlayerHealth player) || gameObject.TryGetComponent(out PlayerBulletSpawner _))
             {
-
                 player.DecraseHealth(bulletDamage);
 
-                DestroyBullet(contactPoint);
+                DestroyBullet();
+
+                player.CreateBulletDestroyEffect(contactPoint);
             }
         }
         else

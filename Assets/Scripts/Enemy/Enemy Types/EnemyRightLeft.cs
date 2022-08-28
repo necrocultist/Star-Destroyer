@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyRightLeft : MonoBehaviour
@@ -8,6 +6,7 @@ public class EnemyRightLeft : MonoBehaviour
     [SerializeField] private float enemyXAxisSpeed;
     [SerializeField] private float toPlayerOffset;
     [SerializeField] private Transform player;
+
     private void FixedUpdate()
     {
         MoveEnemyRightLeft();

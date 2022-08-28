@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour
@@ -22,11 +18,10 @@ public abstract class Bullet : MonoBehaviour
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D other) {}
-    public void DestroyBullet(Vector2 contact)
+
+    protected void DestroyBullet()
     {
         Destroy(gameObject);
-        GameObject destroyedObject = Instantiate(destroyEffect, contact, Quaternion.identity);
-        Destroy(destroyedObject, destroyTime);
     }
 }
 

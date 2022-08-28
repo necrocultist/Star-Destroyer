@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class TripleShoot : MonoBehaviour
@@ -9,14 +8,13 @@ public class TripleShoot : MonoBehaviour
     [SerializeField] private float bulletSpawnDuration;
     private bool isShootAvailable;
     
-
     private void OnEnable()
     {
         isShootAvailable = true;
-        StartCoroutine(SpawnBullet());
+        StartCoroutine(SpawnTripleBullet());
     }
 
-    public IEnumerator SpawnBullet()
+    public IEnumerator SpawnTripleBullet()
     {
         while (isShootAvailable)
         {

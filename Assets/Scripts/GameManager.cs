@@ -20,12 +20,12 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        ph.OnPlayerDie += StatetoFail;
+        ph.OnPlayerDeath += StatetoFail;
     }
     
     private void OnDisable()
     {
-        ph.OnPlayerDie -= StatetoFail;
+        ph.OnPlayerDeath -= StatetoFail;
     }
 
     void Start()

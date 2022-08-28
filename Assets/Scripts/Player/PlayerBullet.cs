@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBullet : Bullet
@@ -16,12 +13,15 @@ public class PlayerBullet : Bullet
             {
                 enemy.DecraseHealth(bulletDamage);
 
-                DestroyBullet(contactPoint);
                 DestroyBullet();
+
+                enemy.CreateBulletDestroyEffect(contactPoint);
+
             }
-            else if (gameObject.TryGetComponent(out Asteroidmk asteroid))
+            else if (gameObject.TryGetComponent(out Asteroid asteroid))
             {
-                asteroid.DestroyPlayerBullet(this.gameObject, contactPoint);
+                asteroid.CreateBulletDestroyEffect(contactPoint);
+
                 DestroyBullet();
             }
         }
@@ -29,10 +29,5 @@ public class PlayerBullet : Bullet
         {
             Debug.Log("There is no gameObject this" + name + "collides.");
         }
-    }
-
-    private void DestroyBullet()
-    {
-        Destroy(gameObject);
     }
 }

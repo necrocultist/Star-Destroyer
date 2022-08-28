@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidSpawn : MonoBehaviour
+public class AsteroidSpawner : MonoBehaviour
 {
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private float asteroidSpawnTime;
@@ -30,6 +29,5 @@ public class AsteroidSpawn : MonoBehaviour
                 Instantiate(asteroid, spawnPoints[randomSpawnPoint].position, Quaternion.Euler(new Vector3(0, 0, -135)));
             }
         }
-        
     }
 }

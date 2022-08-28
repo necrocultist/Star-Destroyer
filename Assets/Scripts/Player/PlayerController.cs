@@ -1,22 +1,35 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
+    private Rigidbody2D playerRigidBody;
+    private Vector2 inputDirection;
 
-    void FixedUpdate()
+    private void Awake()
     {
-        MovePlayer(GetPlayerInput());
+        playerRigidBody = GetComponent<Rigidbody2D>();
     }
 
-    Vector2 GetPlayerInput()
+    private void Update()
     {
-        return new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+        GetPlayerInput();
     }
 
-    void MovePlayer(Vector2 playerVelocity)
+    private void FixedUpdate()
     {
-        transform.Translate(moveSpeed * Time.fixedDeltaTime * playerVelocity.normalized);
+        MovePlayer(inputDirection);
+    }
+
+    private void GetPlayerInput()
+    {
+        inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+    }
+
+    private void MovePlayer(Vector2 direction)
+    {
+        playerRigidBody.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.fixedDeltaTime));
     }
 
 }

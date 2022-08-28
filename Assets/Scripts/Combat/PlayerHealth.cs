@@ -1,26 +1,16 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerHealth : Health
+public class PlayerHealth : Character
 {
-    private Vector3 scaleChangeAmount = new Vector3(0.17f, 0.17f, 0f);
-    [SerializeField] private GameManager gm;
-    public GameObject[] healths;
+    [SerializeField] private int contactDamage;
+
+    [SerializeField] private GameObject[] healths;
     private int index = 0;
 
-    public event Action OnHealthDescreasement;
-    public event Action OnPlayerDie;
+    public event Action OnHealthDecrease;
+    public event Action OnPlayerDeath;
 
-    protected override void OnEnable()
-    {
-        OnHealthDescreasement += ScaleChange;
-    }
-    
-    private void OnDisable()
-    {
-        OnHealthDescreasement -= ScaleChange;
-    }
     public void DecraseHealth(int damage)
     {
         currentHealth -= damage;
@@ -28,7 +18,8 @@ public class PlayerHealth : Health
         if (!AliveCheck())
         {
             gameObject.SetActive(false);
-            OnPlayerDie?.Invoke();
+
+            OnPlayerDeath?.Invoke();
         }
 
         else
@@ -36,7 +27,8 @@ public class PlayerHealth : Health
             Destroy(healths[index]);
             index++;
         }
-        OnHealthDescreasement?.Invoke();
+
+        OnHealthDecrease?.Invoke();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -47,8 +39,9 @@ public class PlayerHealth : Health
         {
             if (gameObject.TryGetComponent(out EnemyHealth enemy) || gameObject.TryGetComponent(out EnemySpawner _))
             {
-                enemy.DestroyObject();
                 DecraseHealth(contactDamage);
+
+                Destroy(enemy);
             }
         }
         else
@@ -56,13 +49,9 @@ public class PlayerHealth : Health
             Debug.Log("There is no gameObject this" + name + "collides.");
         }
     }
-    public void DestroyObject()
-    {
-        Destroy(gameObject);
-    }
 
-    public void ScaleChange()
+    public int GetContactDamage()
     {
-        transform.localScale += scaleChangeAmount;
+        return contactDamage;
     }
 }

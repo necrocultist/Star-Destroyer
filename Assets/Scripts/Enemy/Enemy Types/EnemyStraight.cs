@@ -6,10 +6,10 @@ public class EnemyStraight : MonoBehaviour
 
     void FixedUpdate()
     {
-        MoveEnemyDown();
+        MoveEnemyStraight();
     }
 
-    private void MoveEnemyDown()
+    private void MoveEnemyStraight()
     {
         transform.Translate(new Vector2(0, enemySpeed * Time.fixedDeltaTime));
     }

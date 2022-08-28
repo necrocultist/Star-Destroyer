@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Boundaries : MonoBehaviour {
-    public Camera MainCamera;
+    [SerializeField] private Camera MainCamera;
     private Vector2 screenBounds;
     private float objectWidth;
     private float objectHeight;

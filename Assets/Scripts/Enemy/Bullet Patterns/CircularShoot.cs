@@ -7,15 +7,17 @@ public class CircularShoot : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     private GameObject[] bullets;
     [SerializeField] private float bulletSpawnDuration;
+    private bool isShootAvailable;
 
-    void Start()
+    private void OnEnable()
     {
-        StartCoroutine(SpawnCircular());
+        isShootAvailable = true;
+        StartCoroutine(SpawnCircularBullet());
     }
 
-    public IEnumerator SpawnCircular()
+    public IEnumerator SpawnCircularBullet()
     {
-        while (true)
+        while (isShootAvailable)
         {
             bullets = new GameObject[8];
 

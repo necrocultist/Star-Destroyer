@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyHealth : Health
+public class EnemyHealth : Character
 {
     public void DecraseHealth(int damage)
     {
@@ -8,11 +8,7 @@ public class EnemyHealth : Health
 
         if (!AliveCheck())
         {
-            DestroyObject();
+            Destroy(gameObject);
         }
-    }
-    public void DestroyObject()
-    {
-        Destroy(gameObject);
     }
 }

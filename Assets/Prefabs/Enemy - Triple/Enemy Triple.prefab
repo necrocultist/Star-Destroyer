@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3086265164844643690}
   - component: {fileID: 3086265164844643696}
   m_Layer: 6
-  m_Name: Enemy Straight
+  m_Name: Enemy Triple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,10 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 20
-  contactDamage: 0
-  destroyEffect: {fileID: 8112302006766880307, guid: 76811e29733b22342a58f8e35350c94d, type: 3}
-  destroyTime: 0.07
-  bullet: {fileID: 779177889240866409, guid: 1dd250badb21185418d5550ffbf8ef07, type: 3}
+  bulletDestroyEffect: {fileID: 8112302006766880307, guid: 76811e29733b22342a58f8e35350c94d, type: 3}
+  bulletDestroyTime: 0.07
 --- !u!114 &3086265164844643696
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3438488515674811869}
   - component: {fileID: 6307680414388246859}
   m_Layer: 6
-  m_Name: Enemy Righteft
+  m_Name: Enemy Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,10 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 20
-  contactDamage: 0
-  destroyEffect: {fileID: 8112302006766880307, guid: 4bc1ba724fadbfb49be3f5b6a8886211, type: 3}
-  destroyTime: 0.07
-  bullet: {fileID: 779177889240866409, guid: 796b0367067c37d4eafc154e250a05ed, type: 3}
+  bulletDestroyEffect: {fileID: 8112302006766880307, guid: 4bc1ba724fadbfb49be3f5b6a8886211, type: 3}
+  bulletDestroyTime: 0.07
 --- !u!114 &6307680414388246859
 MonoBehaviour:
   m_ObjectHideFlags: 0
