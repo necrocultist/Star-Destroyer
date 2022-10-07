@@ -1,7 +1,10 @@
+# Created by https://www.toptal.com/developers/gitignore/api/unity
+# Edit at https://www.toptal.com/developers/gitignore?templates=unity
+
+### Unity ###
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-#
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -61,6 +64,9 @@ sysinfo.txt
 *.unitypackage
 *.app
 
+# TextMesh Pro files
+[Aa]ssets/TextMesh*Pro/
+
 # Crashlytics generated file
 crashlytics-build.properties
 
@@ -71,5 +77,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# Exclude TextMesh Pro
-TextMesh Pro/
+# End of https://www.toptal.com/developers/gitignore/api/unity
