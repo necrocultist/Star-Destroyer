@@ -54,4 +54,10 @@ public class PlayerHealth : Character
     {
         return contactDamage;
     }
+
+    public void CreateBulletDestroyEffect(Vector2 contactPoint)
+    {
+        GameObject destroyEffect = Instantiate(bulletDestroyEffect, contactPoint, Quaternion.identity);
+        Destroy(destroyEffect, bulletDestroyTime);
+    }
 }

@@ -11,7 +11,7 @@ public class PlayerBullet : Bullet
 
         if (gameObject != null)
         {
-            if (gameObject.TryGetComponent(out EnemyHealth enemy) || gameObject.TryGetComponent(out EnemyBulletSpawner _))
+            if (gameObject.TryGetComponent(out EnemyHealth enemy))
             {
                 enemy.DecraseHealth(bulletDamage);
 

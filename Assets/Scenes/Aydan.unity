@@ -904,7 +904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1876172234}
   scorePerSecond: 20
-  scoreSelection: 1
+  gm: {fileID: 134116720}
 --- !u!4 &344582858
 Transform:
   m_ObjectHideFlags: 0
@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1062621313}
   scorePerSecond: 20
-  scoreSelection: 2
+  gm: {fileID: 134116720}
 --- !u!4 &1223465968
 Transform:
   m_ObjectHideFlags: 0

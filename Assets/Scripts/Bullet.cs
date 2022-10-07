@@ -6,7 +6,7 @@ public abstract class Bullet : MonoBehaviour
     [SerializeField] protected float bulletSpeed;
     [SerializeField] protected GameObject destroyEffect;
     [SerializeField] protected float destroyTime;
-    
+
     void FixedUpdate()
     {
         MoveBullet();
@@ -17,11 +17,13 @@ public abstract class Bullet : MonoBehaviour
         transform.Translate(new Vector2(0, bulletSpeed * Time.fixedDeltaTime));
     }
 
-    protected virtual void OnCollisionEnter2D(Collision2D other) {}
+    protected virtual void OnCollisionEnter2D(Collision2D other)
+    {
+        // Do Something
+    }
 
     protected void DestroyBullet()
     {
         Destroy(gameObject);
     }
 }
-
