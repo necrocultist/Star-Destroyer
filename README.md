@@ -21,3 +21,10 @@ Currently added enemies are Circular, Triple and Default Aliens.
 ### Installing
 
 - The game can be played on browser with WEBGL and the build can be downloaded on Itch.io.
+
+## Authors
+
+Contributors names and contact info
+
+[@necrocultist.itch.io](https://necrocultist.itch.io)
+[@AydanG.itch.io](https://aydang.itch.io)
