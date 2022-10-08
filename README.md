@@ -14,7 +14,7 @@ Currently added enemies are Circular, Triple and Default Aliens.
 
 ### Dependencies
 
--To play the game -> Going to itch.io and playing on browser/downloading the build.
+- To play the game -> Going to itch.io and playing on browser/downloading the build.
 
 - To edit the game -> Unity
 
@@ -24,9 +24,8 @@ Currently added enemies are Circular, Triple and Default Aliens.
 
 ## Authors
 
-Contributors names and contact info
-
 [@necrocultist.itch.io](https://necrocultist.itch.io)
+
 [@AydanG.itch.io](https://aydang.itch.io)
 
 ## Version History
