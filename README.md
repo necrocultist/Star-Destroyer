@@ -28,3 +28,16 @@ Contributors names and contact info
 
 [@necrocultist.itch.io](https://necrocultist.itch.io)
 [@AydanG.itch.io](https://aydang.itch.io)
+
+## Version History
+
+- 0.2
+  - Various bug fixes
+- 0.1
+  - Initial Release, Jam Build
+
+## Used Kenney Assets
+
+- [Kenney/Planets](https://kenney.nl/assets/planets)
+- [Kenney/Space Shooter Redux](https://kenney.nl/assets/space-shooter-redux)
+- [Kenney/Alien UFO pack](https://kenney.nl/assets/alien-ufo-pack)
