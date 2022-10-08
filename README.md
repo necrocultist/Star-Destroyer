@@ -54,3 +54,7 @@ Currently added enemies are Circular, Triple and Default Aliens.
 - [Kenney/Planets](https://kenney.nl/assets/planets)
 - [Kenney/Space Shooter Redux](https://kenney.nl/assets/space-shooter-redux)
 - [Kenney/Alien UFO pack](https://kenney.nl/assets/alien-ufo-pack)
+
+## Screenshot
+
+[inGame](Assets/Textures/game.png)
