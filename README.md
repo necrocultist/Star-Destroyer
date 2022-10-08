@@ -57,4 +57,4 @@ Currently added enemies are Circular, Triple and Default Aliens.
 
 ## Screenshot
 
-[inGame](Assets/Textures/game.png)
+![inGame](Assets/Textures/game.png)
