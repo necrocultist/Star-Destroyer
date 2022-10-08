@@ -1,6 +1,6 @@
 # Star Destroyer
 
-![icon](Assets/Textures/icon.png)
+![icon](Assets/Textures/Icon.jpeg)
 
 Star Destroy is yet another space shooter game made for Kenney Jam 2022.
 
