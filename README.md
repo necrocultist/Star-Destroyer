@@ -10,6 +10,20 @@ The theme "Growth" is incorporated as a difficulity mechanic that 'grows' the pl
 
 Currently added enemies are Circular, Triple and Default Aliens.
 
+### Controls
+
+- WASD - Moving the Ship
+
+- Left Mouse Button - Shooting
+
+### Planned Features
+
+- SFX and Music
+
+- High Score
+
+- Upgrades and Different Attack Patterns
+
 ## Getting Started
 
 ### Dependencies
